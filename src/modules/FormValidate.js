@@ -38,7 +38,7 @@ export default class FormValidate {
         }
         
         if(password.value.length < 6 || password.value.length > 12){
-            this.createError(password, 'password invalida') 
+            this.createError(password, 'invalid password') 
             return valid = false
         }
 
@@ -77,12 +77,12 @@ export default class FormValidate {
         const user = field.value  
         let valid = true 
         if(user.length < 3 || user.length > 12){
-            this.createError(field, 'Usuário invalido') 
+            this.createError(field, 'invalid user') 
             return valid = false 
         }
         
         if(!user.match(/^[a-zA-Z0-9]+$/g)){
-            this.createError(field, 'Usuário invalido')
+            this.createError(field, 'invalid user')
             return valid = false
         }
 
@@ -94,7 +94,7 @@ export default class FormValidate {
         const cpf = new ValidaCPF(field.value)
         
         if(!cpf.valida()){
-            this.createError(field, 'CPF invalido') 
+            this.createError(field, 'invalid CPF') 
             return false 
         }
 
